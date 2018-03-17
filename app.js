@@ -65,20 +65,22 @@ bot.dialog('/', [
 * ---------------------------------------------------------------------------------------- */
             // Prepare the data
             var data = {
-                severity: session.dialogData.severity,
-                description: session.dialogData.description,
+                //severity: 
+                //description: 
             };
             
             // Post it to /api/tickets
             client.post('/api/tickets', data, (err, request, response, ticketId) => {
-                if (err || ticketId == -1) {
-                    session.send('Ooops! Something went wrong while I was saving your ticket. Please try again later.');
-                } else {
-                    session.send(new builder.Message(session).addAttachment({
-                        contentType: "application/vnd.microsoft.card.adaptive",
-                        content: cards.createCard(ticketId, data)
-                    }));
-                }
+                // check errors
+                //if () {
+                
+                //} else {
+                    // send back the result using createCard
+                    //session.send(new builder.Message(session).addAttachment({
+                    //    contentType:
+                    //    content: 
+                    //}));
+                //}
 
                 session.endDialog();
             });
